@@ -1,0 +1,17 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 2, 3, 1, 5, 4, 2};
+        int maxElement = Arrays.stream(array).max().orElse(0);
+        int[] frequencyArray = new int[maxElement + 1];
+        for (int element : array) {
+            frequencyArray[element]++;
+        }
+
+        for (int i = 0; i < frequencyArray.length; i++) {
+            if (frequencyArray[i] > 0) {
+                System.out.println("Element " + i + " occurs " + frequencyArray[i] + " times.");
+            }
+        }
+    }
+}
